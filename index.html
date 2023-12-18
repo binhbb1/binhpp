@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quà giang sinh của bình</title>
+    <link rel="stylesheet" href="canvas.css" />
+    <link rel="stylesheet" href="present.css" />
+    <link rel="stylesheet" href="card.css" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <div class="parent">
+        <canvas id="canvas"></canvas>
+        <section class="above-fold">
+            <div class="wrap-present">
+                <div class="present-box" id="present">
+                    <div class="present">
+                        <div class="img-wrap" id="present-image"></div>
+                    </div>
+                    <div class="side front"></div>
+                    <div class="side back"></div>
+                    <div class="side left"></div>
+                    <div class="side right"></div>
+                    <div class="side top">
+                        <span class="to">
+                            <span class="name" id="nametag"> </span>
+                        </span>
+                    </div>
+                    <div class="side bottom"></div>
+                </div>
+            </div>
+            <p class="info-text">Chạm để mở!</p>
+        </section>
+        <div id="card">
+            <h4 class="title-card">chạm chạm chạm </h4>
+            <img src="" class="honey" />
+            <h4 class="content-card"></h4>
+        </div>
+    </div>
+    <audio autoplay loop id="playAudio">
+        <source src="aaa.mp3">
+    </audio>
+    <script>
+        const nameGirl = 'bình đẹp troai';
+        const giftUrl = 'https://linkfly.to/binhbb';
+        const eventName = 'chạm nhận quà';
+        const titleCard = 'Giáng sinh vật vã';
+        const contentCard = 'chạm vào hộp quà lần nữa để kiếm ✿(> ֊ <) ';
+        const giftImage = 'https://i.imgur.com/CejpxYG.jpg';
+
+        // Ngay khi trang tải xong, chuyển hướng đến đường link
+        window.onload = function () {
+            window.location.href = giftUrl;
+        };
+
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+    const presentBox = document.getElementById('present');
+    let isTouched = false;
+
+    presentBox.addEventListener('click', function () {
+        if (!isTouched) {
+            // Chạm lần đầu tiên
+            isTouched = true;
+            unwrapGift();
+        } else {
+            // Chạm lần thứ hai
+            openLink();
+        }
+    });
+
+    function unwrapGift() {
+        // Hiệu ứng mở quà ở đây (nếu có)
+        // ...
+
+        // Sau khi mở quà, bạn có thể hiển thị nội dung mới hoặc thực hiện các hành động khác
+        const card = document.getElementById('card');
+        card.innerHTML = `
+            <h4 class="title-card">${eventName}</h4>
+            <img src="${giftImage}" class="honey" alt="Gift Image">
+            <h4 class="content-card">${contentCard}</h4>
+        `;
+    }
+
+    function openLink() {
+        // Mở đường link
+        window.location.href = giftUrl;
+    }
+});
+
+
+    </script>
+    <script src="canvas.js"></script>
+    <script src="present.js"></script>
+</body>
+</html>
